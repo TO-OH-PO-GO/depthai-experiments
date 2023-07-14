@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from depthai_sdk import OakCamera, TrackerPacket, Visualizer, TextPosition
+from depthai_sdk import OakCamera, Visualizer, TextPosition # TrackerPacket 모듈 로드 삭제
 import depthai as dai
 from people_tracker import PeopleTracker
 import cv2

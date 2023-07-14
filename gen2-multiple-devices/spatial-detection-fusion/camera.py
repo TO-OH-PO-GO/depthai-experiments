@@ -44,9 +44,25 @@ class Camera:
 
     def _load_calibration(self):
         path = os.path.join(os.path.dirname(__file__), f"{config.calibration_data_dir}")
+        print("--------")
+        print(os.path.dirname(__file__))
+        print("-----------")
+        print(config.calibration_data_dir)
+        print("-------------")
+        print(path)
+        print("----------------")
+        path_list = path.split("/")
+        path_list_0 = list(path_list[0])
+        path_list_0.pop(-1) 
+        path_list_0.pop(-1)
+        path_list_0 = "".join(path_list_0)
+        print(path_list_0)
+        path = path_list_0 +  path_list[1] + " \ " + path_list[2]
+    
         try:
-            extrinsics = np.load(f"{path}/extrinsics_{self.mxid}.npz")
+            extrinsics = np.load(f"{path}\extrinsics_{self.mxid}.npz")
             self.cam_to_world = extrinsics["cam_to_world"]
+            
         except:
             raise RuntimeError(f"Could not load calibration data for camera {self.mxid} from {path}!")
 

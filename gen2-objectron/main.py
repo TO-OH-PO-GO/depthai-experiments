@@ -9,7 +9,7 @@ from depthai_sdk import FPSHandler
 # ---------- Parameters ----------
 
 MOBILENET_DETECTOR_PATH = str(blobconverter.from_zoo(name="mobilenet-ssd", shaves=6))
-OBJECTRON_CHAIR_PATH = "./models/objectron_chair_openvino_2021.4_6shave.blob"
+OBJECTRON_CHAIR_PATH = ".\gen2-objectron\models\objectron_chair_openvino_2021.4_6shave.blob"
 
 INPUT_W, INPUT_H = 640, 360
 
