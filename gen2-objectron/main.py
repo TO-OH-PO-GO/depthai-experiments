@@ -9,7 +9,7 @@ from depthai_sdk import FPSHandler
 # ---------- Parameters ----------
 
 MOBILENET_DETECTOR_PATH = str(blobconverter.from_zoo(name="mobilenet-ssd", shaves=6))
-OBJECTRON_CHAIR_PATH = "models/objectron_chair_openvino_2021.4_6shave.blob"
+OBJECTRON_CHAIR_PATH = "./models/objectron_chair_openvino_2021.4_6shave.blob"
 
 INPUT_W, INPUT_H = 640, 360
 
@@ -64,7 +64,7 @@ def create_pipeline():
     nn_det.out.link(script_pp.inputs["det_in"])
     nn_det.passthrough.link(script_pp.inputs['det_passthrough'])
 
-    f = open("script.py", "r")
+    f = open(".\gen2-objectron\script.py", "r")
     script_txt = f.read()
     script_pp.setScript(script_txt)
 
